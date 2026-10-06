@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SIGEP" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./pwa-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./pwa-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./pwa-192x192.png" />
+    <meta name="application-name" content="SIGEP" />
+    <title>SIGEP — Sistema Integrado de Gestión Postecsa | POSTECSA DE COLOMBIA SAS</title>
+    <meta name="description" content="SIGEP (Sistema Integrado de Gestión Postecsa) · Sistema de requisiciones, cotizaciones de compras y aprobaciones por área de POSTECSA DE COLOMBIA SAS." />
+    <meta property="og:title" content="SIGEP — Sistema Integrado de Gestión Postecsa | POSTECSA DE COLOMBIA SAS" />
+    <meta property="og:description" content="SIGEP (Sistema Integrado de Gestión Postecsa) · Sistema de requisiciones, cotizaciones de compras y aprobaciones por área de POSTECSA DE COLOMBIA SAS." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+    <script>
+      // Apply theme mode instantly before body renders to prevent white flash
+      (function() {
+        try {
+          var saved = localStorage.getItem('postecsa_theme');
+          var isDark = saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+
+      // Auto-recovery for chunk or network issues during background deployment
+      window.addEventListener('error', function(e) {
+        if (e.message && (e.message.indexOf('dynamically imported module') !== -1 || e.message.indexOf('Loading chunk') !== -1)) {
+          if (!sessionStorage.getItem('sigep_chunk_reloaded')) {
+            sessionStorage.setItem('sigep_chunk_reloaded', '1');
+            window.location.reload();
+          }
+        }
+      });
+    </script>
+    <script type="module" crossorigin src="./index-Dt1ixMEX.js"></script>
+    <link rel="modulepreload" crossorigin href="./rolldown-runtime-W7wSyTde.js">
+    <link rel="modulepreload" crossorigin href="./vendor-lucide-BJWBI51Y.js">
+    <link rel="modulepreload" crossorigin href="./vendor-react-CSGguCoE.js">
+    <link rel="stylesheet" crossorigin href="./index-HWJBmQN_.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body class="bg-[#F8FAFC] dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-slate-900 selection:text-white">
+    <div id="root">
+      <!-- Instant Branded Splash Screen (Replaced immediately by React on mount) -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #0F172A; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px; text-align: center;">
+        <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #F36410, #EA580C); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 10px 25px rgba(243, 100, 16, 0.4);">
+          <span style="font-size: 32px; font-weight: 900; color: white;">P</span>
+        </div>
+        <h1 style="font-size: 20px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 6px 0;">POSTECSA · SIGEP</h1>
+        <p style="font-size: 13px; color: #94A3B8; margin: 0 0 20px 0;">Cargando Sistema Integrado de Gestión...</p>
+        <div style="width: 36px; height: 36px; border: 3px solid rgba(243, 100, 16, 0.2); border-top-color: #F36410; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+      </div>
+    </div>
+  </body>
+</html>
