@@ -1,12 +1,13 @@
 /* SIGEP · Anuncio de novedades. Se muestra una sola vez por versión en cada equipo. */
 (function () {
-  var VERSION = '3.7.0';
+  var VERSION = '3.8.0';
   var CLAVE = 'sigep_novedades_vista';
   var FECHA = '13 de noviembre de 2026';
   var CAMBIOS = [
-    ['Etiqueta de área en cada requisición', 'Ahora el área (Mantenimiento, Laboratorio, Producción, Compras, etc.) aparece como una etiqueta de color: arriba del formulario mientras se llena, en la Bandeja, en las listas de Aprobaciones y en el detalle de cada requisición. Así se ve de un vistazo de qué área es.'],
-    ['Revisa antes de radicar', 'Al pulsar “Radicar Requisición” primero aparece un resumen con el área, el número, la descripción, los ítems y quién preaprueba. Si algo está mal, “← Volver a corregir” regresa al formulario con todo lo que ya escribiste; si está bien, “Confirmar y radicar” la envía. Ya no hay que rehacerla completa.'],
-    ['Todo lo anterior sigue igual', 'El flujo de aprobación, las alertas, la compra por proveedor y lo demás funcionan como antes.']
+    ['Revisa antes de enviar el cuadro comparativo', 'En Compras, al pulsar enviar a aprobación aparece primero un resumen: cada ítem con su cantidad, el proveedor elegido, el valor y el total. Si algo está mal, “← Volver a corregir”; si está bien, “Confirmar y enviar a aprobación”.'],
+    ['Revisa antes de aprobar y emitir la OC', 'Al aprobar la compra, el aprobador ve primero el resumen (ítems, proveedor, valores y total) y confirma antes de que se emita la orden de compra y se avise a los demás.'],
+    ['Etiqueta de área y revisión al radicar', 'Se mantiene la etiqueta de color del área y el resumen “Revisa antes de radicar” de la versión anterior.'],
+    ['Todo lo anterior sigue igual', 'El flujo de aprobación, las alertas y la compra por proveedor funcionan como antes.']
   ];
   var ls = null;
   function leer() { try { return localStorage.getItem(CLAVE); } catch (e) { return null; } }
